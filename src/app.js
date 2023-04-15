@@ -7,5 +7,15 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //write your code here
-  console.log("Hello Rigo from the console!");
+  function wordBlanks(myNoun, myAdjective, myVerb, myAdverb) {
+    var result = "The " + myAdjective + " " + myNoun+ " " + myVerb + " " + "to the store " + myAdverb + "."
+
+    return result;
+  }
+
+
+  console.log (wordBlanks("dog", "big", "ran", "quickly"));
+  console.log (wordBlanks("bike", "slow","flew","slowly"));
+
+
 };

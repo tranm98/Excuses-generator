@@ -1,21 +1,40 @@
-/* eslint-disable */
-import "bootstrap";
 import "./style.css";
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+window.onload = () => {
+  document.querySelector("#btn").addEventListener("click", () => {
+    document.querySelector("#the-excuse").innerHTML = generateExcuse();
+  });
+  console.log("Hello Rigo from the console!");
+};
+let generateExcuse = () => {
+  let pronoun = ["A(n)", "The"];
+  let subject = [
+    "performer",
+    "gymnast",
+    "dog",
+    "clown",
+    "electrician",
+    "plumber"
+  ];
+  let action = ["took", "threw", "shocked", "stole", "bit"];
+  let where = ["on the road", "at school", "at the store", "at work"];
+  let possetion = ["my food", "my homework", "my car", "my cat", "my phone"];
 
-window.onload = function() {
-  //write your code here
-  function wordBlanks(myNoun, myAdjective, myVerb, myAdverb) {
-    var result = "The " + myAdjective + " " + myNoun+ " " + myVerb + " " + "to the store " + myAdverb + "."
+  let proIndex = Math.floor(Math.random() * pronoun.length);
+  let subIndex = Math.floor(Math.random() * subject.length);
+  let actIndex = Math.floor(Math.random() * action.length);
+  let whereIndex = Math.floor(Math.random() * where.length);
+  let posIndex = Math.floor(Math.random() * possetion.length);
 
-    return result;
-  }
-
-
-  console.log (wordBlanks("dog", "big", "ran", "quickly"));
-  console.log (wordBlanks("bike", "slow","flew","slowly"));
-
-
+  return (
+    pronoun[proIndex] +
+    " " +
+    subject[subIndex] +
+    " " +
+    action[actIndex] +
+    " " +
+    possetion[posIndex] +
+    " " +
+    where[whereIndex]
+  );
 };
